@@ -1,5 +1,11 @@
 xtcbase (1.0.3) UNRELEASED; urgency=low
 
+  * fix openbox config
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 31 Dec 2020 15:07:00 +0000
+ 
+xtcbase (1.0.3) UNRELEASED; urgency=low
+
   * removed base-clients dependency
 
  -- Stephan Eisler <stephan@eisler.de>  Wed, 31 Dec 2020 12:11:00 +0000
