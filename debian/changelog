@@ -1,3 +1,9 @@
+xtcbase (1.0.2) UNRELEASED; urgency=low
+
+  * Sign package
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 31 Dec 2020 10:17:03 +0000
+ 
 xtcbase (1.0.1) UNRELEASED; urgency=low
 
   * Initial release
