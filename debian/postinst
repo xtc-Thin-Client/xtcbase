@@ -77,7 +77,8 @@ echo "6. autologin"
 sed -e 's/^ExecStart=.*$/ExecStart=-\/sbin\/agetty --noclear --autologin thinclient %I $TERM/g' -i /lib/systemd/system/getty@.service
 
 echo "7. config openbox"
-# done via install
+cp $DESTINATION/install/menu.xml /etc/xdg/openbox/
+cp $DESTINATION/install/rc.xml /etc/xdg/openbox/
 
 echo "8. config tint2"
 chown -R thinclient $DIR/.config
