@@ -1,3 +1,9 @@
+xtcbase (1.0.6) UNRELEASED; urgency=low
+
+  * fix argon1 script path
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 02 Dec 2021 12:10:00 +0000
+ 
 xtcbase (1.0.5) UNRELEASED; urgency=low
 
   * remove pi user
