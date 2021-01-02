@@ -34,18 +34,6 @@ echo "2. start ssh"
 systemctl disable ssh > /dev/null 2>&1
 
 echo "3. add user"
-adduser --disabled-password --gecos "" thinclient 
-echo thinclient:thinclient | chpasswd
-usermod -a -G users thinclient 
-usermod -a -G video thinclient
-rmdir /home/thinclient/Desktop
-rmdir /home/thinclient/Documents
-rmdir /home/thinclient/Downloads
-rmdir /home/thinclient/Music
-rmdir /home/thinclient/Pictures
-rmdir /home/thinclient/Public
-rmdir /home/thinclient/Templates
-rmdir /home/thinclient/Videos
 adduser --disabled-password --gecos "" system
 echo system:system | chpasswd
 usermod -a -G users system 
