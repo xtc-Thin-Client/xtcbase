@@ -14,7 +14,7 @@ xtc/desktop/pidesktop-shutdown.service /lib/systemd
 xtc/desktop/pidesktop-powerkey.service /etc/systemd/system
 xtc/desktop/pidesktop-reboot.service /etc/systemd/system
 xtc/desktop/pidesktop-shutdown.service /etc/systemd/system
-xtc/desktop/argon1.sh /opt/thinclient/install/desktop
+xtc/desktop/argon1.sh /opt/thinclient/desktop
 xtc/sudoers.txt /opt/thinclient/install
 xtc/bashrc.txt /opt/thinclient/install
 xtc/fstab_data /opt/thinclient/install
