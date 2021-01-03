@@ -1,0 +1,14 @@
+[Unit]
+Description=FirstBoot
+After=network.target
+Before=rc-local.service
+ConditionFileNotEmpty=/opt/thinclient/install/firstboot.sh
+
+[Service]
+ExecStart=/opt/thinclient/install/firstboot.sh
+ExecStartPost=/bin/mv /opt/thinclient/install/firstboot.sh /opt/thinclient/install/firstboot.sh.done
+Type=oneshot
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
