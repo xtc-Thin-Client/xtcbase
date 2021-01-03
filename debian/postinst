@@ -28,7 +28,7 @@ echo "Model:" $MODEL
 apt-get -y remove pulseaudio
 
 echo "1. setup firstboot"
-ln -s /lib/systemd/system/firstboot.service /etc/systemd/system/multi-user.target.wants/
+systemctl enable firstboot
 
 echo "2. start ssh"
 systemctl disable ssh > /dev/null 2>&1
