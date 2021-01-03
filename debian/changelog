@@ -1,3 +1,9 @@
+xtcbase (1.0.7) UNRELEASED; urgency=low
+
+  * firstboot script
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 03 Dec 2021 12:23:00 +0000
+ 
 xtcbase (1.0.6) UNRELEASED; urgency=low
 
   * fix argon1 script path
