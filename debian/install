@@ -20,3 +20,4 @@ xtc/sudoers.txt /opt/thinclient/install
 xtc/bashrc.txt /opt/thinclient/install
 xtc/fstab_data /opt/thinclient/install
 xtc/fstab_ro /opt/thinclient/install
+xtc/firstboot.sh /opt/thinclient/install
