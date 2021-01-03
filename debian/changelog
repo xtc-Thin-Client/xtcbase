@@ -1,20 +1,26 @@
+xtcbase (1.0.8) UNRELEASED; urgency=low
+
+  * fix firstboot script
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 03 Jan 2021 17:01:00 +0000
+ 
 xtcbase (1.0.7) UNRELEASED; urgency=low
 
   * firstboot script
 
- -- Stephan Eisler <stephan@eisler.de>  Wed, 03 Dec 2021 12:23:00 +0000
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 03 Jan 2021 12:23:00 +0000
  
 xtcbase (1.0.6) UNRELEASED; urgency=low
 
   * fix argon1 script path
 
- -- Stephan Eisler <stephan@eisler.de>  Wed, 02 Dec 2021 12:10:00 +0000
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 02 Jan 2021 12:10:00 +0000
  
 xtcbase (1.0.5) UNRELEASED; urgency=low
 
   * remove pi user
 
- -- Stephan Eisler <stephan@eisler.de>  Wed, 02 Dec 2021 12:10:00 +0000
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 02 Jan 2021 12:10:00 +0000
 
 xtcbase (1.0.4) UNRELEASED; urgency=low
 
