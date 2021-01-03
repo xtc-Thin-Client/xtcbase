@@ -3,6 +3,7 @@ xtc/thinclient_start /etc/init.d
 xtc/thinclient_shutdown /etc/init.d
 xtc/splashscreen.png /var/thinclient
 xtc/splashscreen.service /etc/systemd/system
+xtc/firstboot.service /lib/systemd/system
 xtc/menu.xml /opt/thinclient/install
 xtc/rc.xml /opt/thinclient/install
 xtc/tint2rc /home/thinclient/.config/tint2
