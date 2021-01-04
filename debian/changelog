@@ -1,3 +1,9 @@
+xtcbase (1.0.9) UNRELEASED; urgency=low
+
+  * fix service x flags
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 04 Jan 2021 18:17:00 +0000
+ 
 xtcbase (1.0.8) UNRELEASED; urgency=low
 
   * fix firstboot script
