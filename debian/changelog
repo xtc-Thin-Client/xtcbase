@@ -1,3 +1,9 @@
+xtcbase (1.0.10) UNRELEASED; urgency=low
+
+  * only testing
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 04 Jan 2021 20:01:00 +0000
+ 
 xtcbase (1.0.9) UNRELEASED; urgency=low
 
   * fix service x flags
