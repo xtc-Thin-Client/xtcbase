@@ -198,12 +198,12 @@ echo "16. create data directory"
 mkdir $DATA 2>> /dev/null
 
 echo "17. mount data directory"
-if [ "$OS" = "R" ]
-then
-  cat /etc/fstab $SOURCE/fstab_data > /tmp/fstab
-  mv /tmp/fstab /etc/fstab
-  mount -a
-fi
+#if [ "$OS" = "R" ]
+#then
+#  cat /etc/fstab $SOURCE/fstab_data > /tmp/fstab
+#  mv /tmp/fstab /etc/fstab
+#  mount -a
+#fi
 
 echo "18. config data directory"
 chmod a=rwx $DATA 2>> /dev/null
