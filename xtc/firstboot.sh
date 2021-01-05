@@ -97,8 +97,8 @@ echo "2. start ssh"
 systemctl disable ssh > /dev/null 2>&1
 
 echo "3. add user"
-adduser --disabled-password --gecos "" thinclient 2>> $SOURCE/install.err
-echo thinclient:thinclient | chpasswd 2>> $SOURCE/install.err
+#adduser --disabled-password --gecos "" thinclient 2>> $SOURCE/install.err
+#echo thinclient:thinclient | chpasswd 2>> $SOURCE/install.err
 usermod -a -G users thinclient 2>> $SOURCE/install.err
 usermod -a -G video thinclient 2>> $SOURCE/install.err
 rmdir /home/thinclient/Desktop
@@ -141,8 +141,8 @@ sed -e 's/^ExecStart=.*$/ExecStart=-\/sbin\/agetty --noclear --autologin thincli
 
 echo "7. config openbox"
 cp $SOURCE/menu.xml /etc/xdg/openbox 2>> $SOURCE/install.err
-mkdir $DIR/.config 2>> $SOURCE/install.err
-mkdir $DIR/.config/openbox 2>> $SOURCE/install.err
+#mkdir $DIR/.config 2>> $SOURCE/install.err
+#mkdir $DIR/.config/openbox 2>> $SOURCE/install.err
 cp $SOURCE/autostart $DIR/.config/openbox 2>> $SOURCE/install.err
 cp $SOURCE/rc.xml /etc/xdg/openbox 2>> $SOURCE/install.err
 
@@ -159,17 +159,17 @@ chown thinclient $DIR/.bashrc
 chgrp thinclient $DIR/.bashrc
 
 echo "10. install thinclient"
-mkdir $DESTINATION 2>> $SOURCE/install.err  
-cp -a $SOURCE/bin $DESTINATION 2>> $SOURCE/install.err
-cp -a $SOURCE/config $DESTINATION 2>> $SOURCE/install.err  
-cp -a $SOURCE/script $DESTINATION 2>> $SOURCE/install.err
-cp -a $SOURCE/desktop $DESTINATION 2>> $SOURCE/install.err
-if [ "$OS" = "U" ]
-then
-  cp -a $SOURCE/script/ubuntu/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
-else
-  cp -a $SOURCE/script/raspbian/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
-fi
+#mkdir $DESTINATION 2>> $SOURCE/install.err  
+#cp -a $SOURCE/bin $DESTINATION 2>> $SOURCE/install.err
+#cp -a $SOURCE/config $DESTINATION 2>> $SOURCE/install.err  
+#cp -a $SOURCE/script $DESTINATION 2>> $SOURCE/install.err
+#cp -a $SOURCE/desktop $DESTINATION 2>> $SOURCE/install.err
+#if [ "$OS" = "U" ]
+#then
+#  cp -a $SOURCE/script/ubuntu/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
+#else
+#  cp -a $SOURCE/script/raspbian/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
+#fi
 ln -s $DESTINATION/script/thinclient.sh /usr/bin/thinclient 
 
 echo "11. create var directory"
@@ -251,11 +251,11 @@ then
 fi
 
 echo "22. delete user pi (Rasberry Pi only)"
-if [ "$OS" = "R" ]
-then
-  deluser pi 2>> $SOURCE/install.err
-  rm -rf /home/pi
-fi
+#if [ "$OS" = "R" ]
+#then
+#  deluser pi 2>> $SOURCE/install.err
+#  rm -rf /home/pi
+#fi
 
 echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
 if [ "$OS" = "R" ]
