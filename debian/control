@@ -10,6 +10,6 @@ Vcs-Git: https://github.com/xtc-Thin-Client/xtcbase.git
 
 Package: xtcbase
 Architecture: all
-Depends: ${misc:Depends}, x11vnc, openbox, tint2, wmctrl, tightvncserver, tigervnc-viewer, freerdp2-x11, rdesktop, xserver-xephyr, pyhoca-cli, openvpn, lockfile-progs, usbmount
+Depends: ${misc:Depends}, sshpass, fbi, ghostscript, gsfonts, libglu1-mesa, x11-apps,xfonts-100dpi, xfonts-75dpi, xfonts-scalable, xorg, xorg-docs-core, x11-apps, x11-session-utils, xbase-clients, xbitmaps, x11vnc, openbox, tint2, wmctrl, tightvncserver, tigervnc-viewer, freerdp2-x11, rdesktop, xserver-xephyr, pyhoca-cli, openvpn, lockfile-progs, usbmount
 Description: xtc is a open source thin client software
  xtc is a open source thin client software. Connect to all servers in your network and benefit from their power.
