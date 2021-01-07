@@ -1,7 +1,6 @@
 [Unit]
 Description=FirstBoot
-After=network.target
-Before=rc-local.service
+After=local-fs.target
 ConditionFileNotEmpty=/opt/thinclient/install/firstboot.sh
 
 [Service]
