@@ -141,8 +141,8 @@ sed -e 's/^ExecStart=.*$/ExecStart=-\/sbin\/agetty --noclear --autologin thincli
 
 echo "7. config openbox"
 cp $SOURCE/menu.xml /etc/xdg/openbox 2>> $SOURCE/install.err
-#mkdir $DIR/.config 2>> $SOURCE/install.err
-#mkdir $DIR/.config/openbox 2>> $SOURCE/install.err
+mkdir $DIR/.config 2>> $SOURCE/install.err
+mkdir $DIR/.config/openbox 2>> $SOURCE/install.err
 cp $SOURCE/autostart $DIR/.config/openbox 2>> $SOURCE/install.err
 cp $SOURCE/rc.xml /etc/xdg/openbox 2>> $SOURCE/install.err
 
