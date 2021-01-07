@@ -1,3 +1,9 @@
+xtcbase (1.0.13) UNRELEASED; urgency=low
+
+  * add package xterm
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 07 Jan 2021 14:14:00 +0000
+
 xtcbase (1.0.12) UNRELEASED; urgency=low
 
   * removed network dependency
