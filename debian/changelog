@@ -1,3 +1,9 @@
+xtcbase (1.0.12) UNRELEASED; urgency=low
+
+  * removed network dependency
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 07 Jan 2021 09:12:00 +0000
+
 xtcbase (1.0.11) UNRELEASED; urgency=low
 
   * only testing
