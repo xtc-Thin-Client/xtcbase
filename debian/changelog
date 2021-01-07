@@ -1,3 +1,9 @@
+xtcbase (1.0.14) UNRELEASED; urgency=low
+
+  * inital firstboot config
+
+ -- Stephan Eisler <stephan@eisler.de>  Wed, 07 Jan 2021 17:18:00 +0000
+
 xtcbase (1.0.13) UNRELEASED; urgency=low
 
   * add package xterm
