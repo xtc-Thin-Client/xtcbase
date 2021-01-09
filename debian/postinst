@@ -155,13 +155,6 @@ then
   sed 's/^dtoverlay=/#dtoverlay=/' -i /boot/config.txt
 fi
 
-echo "25. install software for argon1 case (Raspberry Pi 4 only)"
-if [ "$OS" = "R" ]
-then
-  $SOURCE/desktop/argon1.sh
-  systemctl disable argononed
-fi
-
 echo "26. configure usb automount"
 sed 's/^FS_MOUNTOPTIONS=/FS_MOUNTOPTIONS="-fstype=vfat,user=000,dmask=0000,fmask=0000,gid=thinclient,uid=thinclient"/' -i /etc/usbmount/usbmount.conf
 # deactivate automount
