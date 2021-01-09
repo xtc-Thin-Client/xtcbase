@@ -76,7 +76,7 @@ fi
 echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
 if [ "$OS" = "R" ]
 then
-  dpkg -i /opt/thinclient/desktop/pidesktop-base.deb
+  dpkg -i /opt/thinclient/install/desktop/pidesktop-base.deb
   echo " " >> /boot/config.txt
   echo " " >> /boot/config.txt
   cp $SOURCE/desktop/pidesktop.sh $DESTINATION/desktop
@@ -95,12 +95,12 @@ then
   chown root:root /etc/systemd/system/pidesktop-shutdown.service
 fi
 
-echo "25. install software for argon1 case (Raspberry Pi 4 only)"
-if [ "$OS" = "R" ]
-then
+#echo "25. install software for argon1 case (Raspberry Pi 4 only)"
+#if [ "$OS" = "R" ]
+#then
   #$SOURCE/desktop/argon1.sh
   #systemctl disable argononed
-fi
+#fi
 
 # reboot
 shutdown -r now
