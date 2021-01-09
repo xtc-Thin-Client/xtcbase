@@ -15,7 +15,8 @@ case "$1" in
     /opt/thinclient/install/firstboot.sh &&
     update-rc.d firstboot remove &&
     rm /etc/init.d/firstboot &&
-    log_end_msg $?
+    log_end_msg $? &&
+    shutdown -r now
     ;;
   *)
     echo "Usage: $0 start" >&2
