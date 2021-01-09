@@ -103,4 +103,4 @@ then
 fi
 
 # reboot
-#shutdown -r now
+shutdown -r now
