@@ -99,8 +99,8 @@ systemctl disable ssh > /dev/null 2>&1
 echo "3. add user"
 #adduser --disabled-password --gecos "" thinclient 2>> $SOURCE/install.err
 #echo thinclient:thinclient | chpasswd 2>> $SOURCE/install.err
-usermod -a -G users thinclient 2>> $SOURCE/install.err
-usermod -a -G video thinclient 2>> $SOURCE/install.err
+#usermod -a -G users thinclient 2>> $SOURCE/install.err
+#usermod -a -G video thinclient 2>> $SOURCE/install.err
 rmdir /home/thinclient/Desktop
 rmdir /home/thinclient/Documents
 rmdir /home/thinclient/Downloads
@@ -198,12 +198,12 @@ echo "16. create data directory"
 mkdir $DATA 2>> /dev/null
 
 echo "17. mount data directory"
-if [ "$OS" = "R" ]
-then
-  cat /etc/fstab $SOURCE/fstab_data > /tmp/fstab
-  mv /tmp/fstab /etc/fstab
-  mount -a
-fi
+#if [ "$OS" = "R" ]
+#then
+#  cat /etc/fstab $SOURCE/fstab_data > /tmp/fstab
+#  mv /tmp/fstab /etc/fstab
+#  mount -a
+#fi
 
 echo "18. config data directory"
 chmod a=rwx $DATA 2>> /dev/null
