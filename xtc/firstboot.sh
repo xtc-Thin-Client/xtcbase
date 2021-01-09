@@ -98,8 +98,8 @@ fi
 echo "25. install software for argon1 case (Raspberry Pi 4 only)"
 if [ "$OS" = "R" ]
 then
-  $SOURCE/desktop/argon1.sh
-  systemctl disable argononed
+  #$SOURCE/desktop/argon1.sh
+  #systemctl disable argononed
 fi
 
 # reboot
