@@ -27,69 +27,69 @@ echo "System:" $OS
 echo "Model:" $MODEL
 
 echo "1. install packages"
-apt-get update > $SOURCE/install.out
-echo "   - install ssh"
-apt-get -y install ssh >> $SOURCE/install.out
-echo "   - install sshpass"
-apt-get -y install sshpass >> $SOURCE/install.out
-echo "   - install nfs-client"
-apt-get -y install nfs-client >> $SOURCE/install.out
-echo "   - install fbi"
-apt-get -y install fbi >> $SOURCE/install.out
-if [ "$OS" = "R" ]
-then
-  echo "   - install xorg"
-  apt-get -y install xorg >> $SOURCE/install.out
-else
-  echo "   - install xserver-xorg-core"
-  apt-get -y install xserver-xorg-core >> $SOURCE/install.out
-fi
-echo "   - install x11vnc"
-apt-get -y install x11vnc >> $SOURCE/install.out
-echo "   - install openbox"
-apt-get -y install openbox >> $SOURCE/install.out 
-if [ "$OS" = "U" ]
-then
-  echo "   - install xinit"
-  apt-get -y install xinit >> $SOURCE/install.out
-fi
-echo "   - install tint2"
-apt-get -y install tint2 >> $SOURCE/install.out 
-echo "   - install wmctrl"
-apt-get -y install wmctrl >> $SOURCE/install.out 
-echo "   - install qt5-default"
-apt-get -y install qt5-default >> $SOURCE/install.out
-echo "   - install python3-pyqt5"
-apt-get -y install python3-pyqt5 >> $SOURCE/install.out 
-echo "   - install xbase-clients"
-apt-get -y install xbase-clients >> $SOURCE/install.out 
-echo "   - install tightvncserver"
-apt-get -y install tightvncserver >> $SOURCE/install.out 
+#apt-get update > $SOURCE/install.out
+#echo "   - install ssh"
+#apt-get -y install ssh >> $SOURCE/install.out
+#echo "   - install sshpass"
+#apt-get -y install sshpass >> $SOURCE/install.out
+#echo "   - install nfs-client"
+#apt-get -y install nfs-client >> $SOURCE/install.out
+#echo "   - install fbi"
+#apt-get -y install fbi >> $SOURCE/install.out
+#if [ "$OS" = "R" ]
+#then
+#  echo "   - install xorg"
+#  apt-get -y install xorg >> $SOURCE/install.out
+#else
+#  echo "   - install xserver-xorg-core"
+#  apt-get -y install xserver-xorg-core >> $SOURCE/install.out
+#fi
+#echo "   - install x11vnc"
+#apt-get -y install x11vnc >> $SOURCE/install.out
+#echo "   - install openbox"
+#apt-get -y install openbox >> $SOURCE/install.out 
+#if [ "$OS" = "U" ]
+#then
+#  echo "   - install xinit"
+#  apt-get -y install xinit >> $SOURCE/install.out
+#fi
+#echo "   - install tint2"
+#apt-get -y install tint2 >> $SOURCE/install.out 
+#echo "   - install wmctrl"
+#apt-get -y install wmctrl >> $SOURCE/install.out 
+#echo "   - install qt5-default"
+#apt-get -y install qt5-default >> $SOURCE/install.out
+#echo "   - install python3-pyqt5"
+#apt-get -y install python3-pyqt5 >> $SOURCE/install.out 
+#echo "   - install xbase-clients"
+#apt-get -y install xbase-clients >> $SOURCE/install.out 
+#echo "   - install tightvncserver"
+#apt-get -y install tightvncserver >> $SOURCE/install.out 
 #echo "   - install xtightvncviewer"
 #apt-get -y install xtightvncviewer >> $SOURCE/install.out
-echo "   - install tigervnc-viewer"
-apt-get -y install tigervnc-viewer >> $SOURCE/install.out
-echo "   - install freerdp2-x11"
-apt-get -y install freerdp2-x11 >> $SOURCE/install.out
-echo "   - install rdesktop"
-apt-get -y install rdesktop >> $SOURCE/install.out
-echo "   - install xserver-xephyr"
-apt-get -y install xserver-xephyr >> $SOURCE/install.out
-echo "   - install pyhoca-cli"
-apt-get -y install pyhoca-cli >> $SOURCE/install.out
-echo "   - install openvpn"
-apt-get -y install openvpn >> $SOURCE/install.out
+#echo "   - install tigervnc-viewer"
+#apt-get -y install tigervnc-viewer >> $SOURCE/install.out
+#echo "   - install freerdp2-x11"
+#apt-get -y install freerdp2-x11 >> $SOURCE/install.out
+#echo "   - install rdesktop"
+#apt-get -y install rdesktop >> $SOURCE/install.out
+#echo "   - install xserver-xephyr"
+#apt-get -y install xserver-xephyr >> $SOURCE/install.out
+#echo "   - install pyhoca-cli"
+#apt-get -y install pyhoca-cli >> $SOURCE/install.out
+#echo "   - install openvpn"
+#apt-get -y install openvpn >> $SOURCE/install.out
 # used by usbmount
-echo "   - install lockfile-progs"
-apt-get -y install lockfile-progs >> $SOURCE/install.out
-echo "   - install usbmount"
-if [ "$OS" = "R" ]
-then
+#echo "   - install lockfile-progs"
+#apt-get -y install lockfile-progs >> $SOURCE/install.out
+#echo "   - install usbmount"
+#if [ "$OS" = "R" ]
+#then
   # original usbmount is defect
-  dpkg -i $SOURCE/usbmount_0.0.24_all.deb
-else
-  apt-get -y install usbmount >> $SOURCE/install.out
-fi
+#  dpkg -i $SOURCE/usbmount_0.0.24_all.deb
+#else
+#  apt-get -y install usbmount >> $SOURCE/install.out
+#fi
 # delete pulseaudio while problems with also sound
 apt-get -y remove pulseaudio
 
