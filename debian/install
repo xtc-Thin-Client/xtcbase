@@ -17,6 +17,5 @@ xtc/desktop/pidesktop-shutdown.service /opt/thinclient/install/desktop
 xtc/desktop/argon1.sh /opt/thinclient/install/desktop
 xtc/sudoers.txt /opt/thinclient/install	
 xtc/bashrc.txt /opt/thinclient/install		
-xtc/fstab_data /opt/thinclient/install		
 xtc/fstab_ro /opt/thinclient/install
 xtc/usbmount_0.0.24_all.deb /opt/thinclient/install
