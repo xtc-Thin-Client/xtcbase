@@ -102,5 +102,3 @@ fi
   #systemctl disable argononed
 #fi
 
-# reboot
-shutdown -r now
