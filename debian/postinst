@@ -159,17 +159,17 @@ chown thinclient $DIR/.bashrc
 chgrp thinclient $DIR/.bashrc
 
 echo "10. install thinclient"
-mkdir $DESTINATION 2>> $SOURCE/install.err  
-cp -a $SOURCE/bin $DESTINATION 2>> $SOURCE/install.err
-cp -a $SOURCE/config $DESTINATION 2>> $SOURCE/install.err  
-cp -a $SOURCE/script $DESTINATION 2>> $SOURCE/install.err
-cp -a $SOURCE/desktop $DESTINATION 2>> $SOURCE/install.err
-if [ "$OS" = "U" ]
-then
-  cp -a $SOURCE/script/ubuntu/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
-else
-  cp -a $SOURCE/script/raspbian/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
-fi
+#mkdir $DESTINATION 2>> $SOURCE/install.err  
+#cp -a $SOURCE/bin $DESTINATION 2>> $SOURCE/install.err
+#cp -a $SOURCE/config $DESTINATION 2>> $SOURCE/install.err  
+#cp -a $SOURCE/script $DESTINATION 2>> $SOURCE/install.err
+#cp -a $SOURCE/desktop $DESTINATION 2>> $SOURCE/install.err
+#if [ "$OS" = "U" ]
+#then
+#  cp -a $SOURCE/script/ubuntu/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
+#else
+#  cp -a $SOURCE/script/raspbian/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
+#fi
 ln -s $DESTINATION/script/thinclient.sh /usr/bin/thinclient 
 
 echo "11. create var directory"
