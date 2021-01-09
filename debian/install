@@ -1,5 +1,3 @@
-xtc/firstboot /etc/init.d
-xtc/firstboot.sh /opt/thinclient/install
 xtc/autostart /opt/thinclient/install	
 xtc/thinclient_start /opt/thinclient/install	
 xtc/thinclient_shutdown /opt/thinclient/install
