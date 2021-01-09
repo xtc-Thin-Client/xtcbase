@@ -1,3 +1,9 @@
+xtcbase (1.0.19) UNRELEASED; urgency=low
+
+  * reboot after firstboot
+
+ -- Stephan Eisler <stephan@eisler.de>  Sat, 09 Jan 2021 15:51:00 +0000
+ 
 xtcbase (1.0.18) UNRELEASED; urgency=low
 
   * firstboot
