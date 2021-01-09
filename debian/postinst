@@ -250,12 +250,12 @@ then
   echo "disable_splash=1" >> /boot/config.txt
 fi
 
-echo "22. delete user pi (Rasberry Pi only)"
-if [ "$OS" = "R" ]
-then
-  deluser pi 2>> $SOURCE/install.err
-  rm -rf /home/pi
-fi
+#echo "22. delete user pi (Rasberry Pi only)"
+#if [ "$OS" = "R" ]
+#then
+#  deluser pi 2>> $SOURCE/install.err
+#  rm -rf /home/pi
+#fi
 
 echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
 if [ "$OS" = "R" ]
