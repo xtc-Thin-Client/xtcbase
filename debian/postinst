@@ -26,89 +26,11 @@ fi
 echo "System:" $OS
 echo "Model:" $MODEL
 
-echo "1. install packages"
-#apt-get update > $SOURCE/install.out
-#echo "   - install ssh"
-#apt-get -y install ssh >> $SOURCE/install.out
-#echo "   - install sshpass"
-#apt-get -y install sshpass >> $SOURCE/install.out
-#echo "   - install nfs-client"
-#apt-get -y install nfs-client >> $SOURCE/install.out
-#echo "   - install fbi"
-#apt-get -y install fbi >> $SOURCE/install.out
-#if [ "$OS" = "R" ]
-#then
-#  echo "   - install xorg"
-#  apt-get -y install xorg >> $SOURCE/install.out
-#else
-#  echo "   - install xserver-xorg-core"
-#  apt-get -y install xserver-xorg-core >> $SOURCE/install.out
-#fi
-#echo "   - install x11vnc"
-#apt-get -y install x11vnc >> $SOURCE/install.out
-#echo "   - install openbox"
-#apt-get -y install openbox >> $SOURCE/install.out 
-#if [ "$OS" = "U" ]
-#then
-#  echo "   - install xinit"
-#  apt-get -y install xinit >> $SOURCE/install.out
-#fi
-#echo "   - install tint2"
-#apt-get -y install tint2 >> $SOURCE/install.out 
-#echo "   - install wmctrl"
-#apt-get -y install wmctrl >> $SOURCE/install.out 
-#echo "   - install qt5-default"
-#apt-get -y install qt5-default >> $SOURCE/install.out
-#echo "   - install python3-pyqt5"
-#apt-get -y install python3-pyqt5 >> $SOURCE/install.out 
-#echo "   - install xbase-clients"
-#apt-get -y install xbase-clients >> $SOURCE/install.out 
-#echo "   - install tightvncserver"
-#apt-get -y install tightvncserver >> $SOURCE/install.out 
-#echo "   - install xtightvncviewer"
-#apt-get -y install xtightvncviewer >> $SOURCE/install.out
-#echo "   - install tigervnc-viewer"
-#apt-get -y install tigervnc-viewer >> $SOURCE/install.out
-#echo "   - install freerdp2-x11"
-#apt-get -y install freerdp2-x11 >> $SOURCE/install.out
-#echo "   - install rdesktop"
-#apt-get -y install rdesktop >> $SOURCE/install.out
-#echo "   - install xserver-xephyr"
-#apt-get -y install xserver-xephyr >> $SOURCE/install.out
-#echo "   - install pyhoca-cli"
-#apt-get -y install pyhoca-cli >> $SOURCE/install.out
-#echo "   - install openvpn"
-#apt-get -y install openvpn >> $SOURCE/install.out
-# used by usbmount
-#echo "   - install lockfile-progs"
-#apt-get -y install lockfile-progs >> $SOURCE/install.out
-#echo "   - install usbmount"
-#if [ "$OS" = "R" ]
-#then
-  # original usbmount is defect
-#  dpkg -i $SOURCE/usbmount_0.0.24_all.deb
-#else
-#  apt-get -y install usbmount >> $SOURCE/install.out
-#fi
-# delete pulseaudio while problems with also sound
-apt-get -y remove pulseaudio
 
 echo "2. start ssh"
 systemctl disable ssh > /dev/null 2>&1
 
 echo "3. add user"
-#adduser --disabled-password --gecos "" thinclient 2>> $SOURCE/install.err
-#echo thinclient:thinclient | chpasswd 2>> $SOURCE/install.err
-#usermod -a -G users thinclient 2>> $SOURCE/install.err
-#usermod -a -G video thinclient 2>> $SOURCE/install.err
-rmdir /home/thinclient/Desktop
-rmdir /home/thinclient/Documents
-rmdir /home/thinclient/Downloads
-rmdir /home/thinclient/Music
-rmdir /home/thinclient/Pictures
-rmdir /home/thinclient/Public
-rmdir /home/thinclient/Templates
-rmdir /home/thinclient/Videos
 adduser --disabled-password --gecos "" system 2>> $SOURCE/install.err
 echo system:system | chpasswd 2>> $SOURCE/install.err
 usermod -a -G users system 2>> $SOURCE/install.err
@@ -194,38 +116,6 @@ cp $SOURCE/splashscreen.png $VAR
 cp $SOURCE/splashscreen.service /etc/systemd/system
 systemctl enable splashscreen
 
-echo "16. create data directory"
-mkdir $DATA 2>> /dev/null
-
-echo "17. mount data directory"
-#if [ "$OS" = "R" ]
-#then
-#  cat /etc/fstab $SOURCE/fstab_data > /tmp/fstab
-#  mv /tmp/fstab /etc/fstab
-#  mount -a
-#fi
-
-echo "18. config data directory"
-chmod a=rwx $DATA 2>> /dev/null
-mkdir $DATA/thinclient 2>> $SOURCE/install.err
-chown thinclient $DATA/thinclient 2>> $SOURCE/install.err
-chgrp thinclient $DATA/thinclient 2>> $SOURCE/install.err
-mkdir $DATA/vpn 2>> $SOURCE/install.err
-chown thinclient $DATA/vpn 2>> $SOURCE/install.err
-chgrp thinclient $DATA/vpn 2>> $SOURCE/install.err
-mkdir $DATA/usb 2>> $SOURCE/install.err
-chown thinclient $DATA/usb 2>> $SOURCE/install.err
-chgrp thinclient $DATA/usb 2>> $SOURCE/install.err
-
-echo "19. config read only fs"
-if [ "$OS" = "R" ]
-then
-  sed '/\/ /s/defaults/ro,defaults/g' -i /etc/fstab
-  sed '/\/boot/s/defaults/ro,defaults/g' -i /etc/fstab
-  cat /etc/fstab $SOURCE/fstab_ro > /tmp/fstab
-  mv /tmp/fstab /etc/fstab
-fi
-
 echo "20. edit boot options (Rasberry Pi only)"
 if [ "$OS" = "R" ]
 then
@@ -257,27 +147,6 @@ fi
 #  rm -rf /home/pi
 #fi
 
-echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
-if [ "$OS" = "R" ]
-then
-  dpkg -i /opt/thinclient/desktop/pidesktop-base.deb
-  echo " " >> /boot/config.txt
-  echo " " >> /boot/config.txt
-  cp $SOURCE/desktop/pidesktop.sh $DESTINATION/desktop
-  cp $SOURCE/desktop/pidesktop-powerkey.service /lib/systemd
-  cp $SOURCE/desktop/pidesktop-reboot.service /lib/systemd
-  cp $SOURCE/desktop/pidesktop-shutdown.service /lib/systemd
-  cp $SOURCE/desktop/pidesktop-powerkey.service /etc/systemd/system
-  cp $SOURCE/desktop/pidesktop-reboot.service //etc/systemd/system
-  cp $SOURCE/desktop/pidesktop-shutdown.service /etc/systemd/system
-  chown root:root $DESTINATION/desktop/pidesktop.sh
-  chown root:root /lib/systemd/pidesktop-powerkey.service 
-  chown root:root /lib/systemd/pidesktop-reboot.service
-  chown root:root /lib/systemd/pidesktop-shutdown.service
-  chown root:root /etc/systemd/system/pidesktop-powerkey.service 
-  chown root:root /etc/systemd/system/pidesktop-reboot.service
-  chown root:root /etc/systemd/system/pidesktop-shutdown.service
-fi
 
 echo "24. disable GL driver (Raspberry Pi 4 only)"
 if [ "$OS" = "R" ] && [ "$MODEL" = "PI4" ]
@@ -308,3 +177,5 @@ else
   echo 
   echo "** Reboot system now"
 fi
+
+systemctl enable firstboot
