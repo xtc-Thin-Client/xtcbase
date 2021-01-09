@@ -1,3 +1,10 @@
+xtcbase (1.0.15) UNRELEASED; urgency=low
+
+  * install via deb package postinst
+
+ -- Stephan Eisler <stephan@eisler.de>  Sat, 09 Jan 2021 11:11:00 +0000
+
+
 xtcbase (1.0.14) UNRELEASED; urgency=low
 
   * inital firstboot config
