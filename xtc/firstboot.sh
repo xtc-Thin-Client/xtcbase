@@ -73,27 +73,27 @@ then
   mv /tmp/fstab /etc/fstab
 fi
 
-echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
-if [ "$OS" = "R" ]
-then
-  dpkg -i /opt/thinclient/install/desktop/pidesktop-base.deb
-  echo " " >> /boot/config.txt
-  echo " " >> /boot/config.txt
-  cp $SOURCE/desktop/pidesktop.sh $DESTINATION/desktop
-  cp $SOURCE/desktop/pidesktop-powerkey.service /lib/systemd
-  cp $SOURCE/desktop/pidesktop-reboot.service /lib/systemd
-  cp $SOURCE/desktop/pidesktop-shutdown.service /lib/systemd
-  cp $SOURCE/desktop/pidesktop-powerkey.service /etc/systemd/system
-  cp $SOURCE/desktop/pidesktop-reboot.service //etc/systemd/system
-  cp $SOURCE/desktop/pidesktop-shutdown.service /etc/systemd/system
-  chown root:root $DESTINATION/desktop/pidesktop.sh
-  chown root:root /lib/systemd/pidesktop-powerkey.service 
-  chown root:root /lib/systemd/pidesktop-reboot.service
-  chown root:root /lib/systemd/pidesktop-shutdown.service
-  chown root:root /etc/systemd/system/pidesktop-powerkey.service 
-  chown root:root /etc/systemd/system/pidesktop-reboot.service
-  chown root:root /etc/systemd/system/pidesktop-shutdown.service
-fi
+#echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
+#if [ "$OS" = "R" ]
+#then
+#  dpkg -i /opt/thinclient/install/desktop/pidesktop-base.deb
+#  echo " " >> /boot/config.txt
+#  echo " " >> /boot/config.txt
+#  cp $SOURCE/desktop/pidesktop.sh $DESTINATION/desktop
+#  cp $SOURCE/desktop/pidesktop-powerkey.service /lib/systemd
+#  cp $SOURCE/desktop/pidesktop-reboot.service /lib/systemd
+#  cp $SOURCE/desktop/pidesktop-shutdown.service /lib/systemd
+#  cp $SOURCE/desktop/pidesktop-powerkey.service /etc/systemd/system
+#  cp $SOURCE/desktop/pidesktop-reboot.service //etc/systemd/system
+#  cp $SOURCE/desktop/pidesktop-shutdown.service /etc/systemd/system
+#  chown root:root $DESTINATION/desktop/pidesktop.sh
+#  chown root:root /lib/systemd/pidesktop-powerkey.service 
+#  chown root:root /lib/systemd/pidesktop-reboot.service
+#  chown root:root /lib/systemd/pidesktop-shutdown.service
+#  chown root:root /etc/systemd/system/pidesktop-powerkey.service 
+#  chown root:root /etc/systemd/system/pidesktop-reboot.service
+#  chown root:root /etc/systemd/system/pidesktop-shutdown.service
+#fi
 
 #echo "25. install software for argon1 case (Raspberry Pi 4 only)"
 #if [ "$OS" = "R" ]
