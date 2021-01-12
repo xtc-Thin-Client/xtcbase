@@ -30,17 +30,6 @@ OS="U"
 # delete pulseaudio while problems with also sound
 #apt-get -y remove pulseaudio
 
-echo "3. add user"
-rmdir /home/thinclient/Desktop
-rmdir /home/thinclient/Documents
-rmdir /home/thinclient/Downloads
-rmdir /home/thinclient/Music
-rmdir /home/thinclient/Pictures
-rmdir /home/thinclient/Public
-rmdir /home/thinclient/Templates
-rmdir /home/thinclient/Videos
-
-
 #echo "16. create data directory"
 #mkdir $DATA 2>> /dev/null
 
