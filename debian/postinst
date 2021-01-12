@@ -171,4 +171,5 @@ else
   echo "** Reboot system now"
 fi
 
-systemctl enable firstboot
+systemctl enable firstboot-early
+systemctl enable firstboot-late
