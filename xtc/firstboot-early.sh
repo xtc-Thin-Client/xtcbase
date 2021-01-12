@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE=/opt/thinclient/install
-rm $SOURCE/install.err 2> /dev/null
+#rm $SOURCE/install.err 2> /dev/null
 DIR=/home/thinclient
 DESTINATION=/opt/thinclient
 VAR=/var/thinclient
@@ -9,26 +9,26 @@ DATA=/data
 echo "* start installation"
 MODEL=""
 OS="U"
-if (cat /etc/issue | grep -i "RASPBIAN")
-then
-  OS="R"
-  # detect pi hardware 
-  MODEL=$(cat /proc/cpuinfo |grep "Revision" | cut -d: -f2 | sed 's/^[ \t]*//')
-  if [ "$MODEL" = "a22082" ] || [ "$MODEL" = "a220a0" ] || [ "$MODEL" = "a32082" ] || [ "$MODEL" = "a52082" ] || [ "$MODEL" = "a22083" ] || [ "$MODEL" = "a02100" ] || [ "$MODEL" = "a020d3" ] || [ "$MODEL" = "a2082" ] || [ "$MODEL" = "a20a0" ]
-  then
-    MODEL="PI3"
-  else
-    MODEL="PI4"
-  fi
-fi
+#if (cat /etc/issue | grep -i "RASPBIAN")
+#then
+#  OS="R"
+#  # detect pi hardware 
+#  MODEL=$(cat /proc/cpuinfo |grep "Revision" | cut -d: -f2 | sed 's/^[ \t]*//')
+#  if [ "$MODEL" = "a22082" ] || [ "$MODEL" = "a220a0" ] || [ "$MODEL" = "a32082" ] || [ "$MODEL" = "a52082" ] || [ "$MODEL" = "a22083" ] || [ "$MODEL" = "a02100" ] || [ "$MODEL" = "a020d3" ] || [ "$MODEL" = "a2082" ] || [ "$MODEL" = "a20a0" ]
+#  then
+#    MODEL="PI3"
+#  else
+#    MODEL="PI4"
+#  fi
+#fi
 
-echo "System:" $OS
-echo "Model:" $MODEL
+#echo "System:" $OS
+#echo "Model:" $MODEL
 
 
-echo "1. install packages"
+#echo "1. install packages"
 # delete pulseaudio while problems with also sound
-apt-get -y remove pulseaudio
+#apt-get -y remove pulseaudio
 
 echo "3. add user"
 rmdir /home/thinclient/Desktop
@@ -41,10 +41,10 @@ rmdir /home/thinclient/Templates
 rmdir /home/thinclient/Videos
 
 
-echo "16. create data directory"
+#echo "16. create data directory"
 #mkdir $DATA 2>> /dev/null
 
-echo "17. mount data directory"
+#echo "17. mount data directory"
 #if [ "$OS" = "R" ]
 #then
 #  cat /etc/fstab $SOURCE/fstab_data > /tmp/fstab
