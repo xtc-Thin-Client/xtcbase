@@ -64,14 +64,6 @@ mkdir $DATA/usb 2>> $SOURCE/install.err
 chown thinclient $DATA/usb 2>> $SOURCE/install.err
 chgrp thinclient $DATA/usb 2>> $SOURCE/install.err
 
-echo "19. config read only fs"
-if [ "$OS" = "R" ]
-then
-  sed '/\/ /s/defaults/ro,defaults/g' -i /etc/fstab
-  sed '/\/boot/s/defaults/ro,defaults/g' -i /etc/fstab
-  cat /etc/fstab $SOURCE/fstab_ro > /tmp/fstab
-  mv /tmp/fstab /etc/fstab
-fi
 
 #echo "23. install driver for pi desktop case (Raspbery Pi 3 only)"
 #if [ "$OS" = "R" ]
