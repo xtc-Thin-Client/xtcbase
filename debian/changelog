@@ -1,3 +1,9 @@
+xtcbase (1.0.24) UNRELEASED; urgency=low
+
+  * firstboot testing
+
+ -- Stephan Eisler <stephan@eisler.de>  Sat, 12 Jan 2021 10:11:00 +0000
+ 
 xtcbase (1.0.23) UNRELEASED; urgency=low
 
   * firstboot testing (early and late)
