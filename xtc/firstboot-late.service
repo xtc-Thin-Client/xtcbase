@@ -5,7 +5,7 @@ ConditionFileNotEmpty=/opt/thinclient/install/firstboot-late.sh
 
 [Service]
 ExecStart=/opt/thinclient/install/firstboot-late.sh
-ExecStartPost=/bin/mv /opt/thinclient/install/firstboot-early.sh /opt/thinclient/install/firstboot-late.sh.done
+ExecStartPost=/bin/mv /opt/thinclient/install/firstboot-late.sh /opt/thinclient/install/firstboot-late.sh.done
 Type=oneshot
 RemainAfterExit=no
 
