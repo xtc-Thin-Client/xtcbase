@@ -9,6 +9,7 @@ rmdir /home/thinclient/Music
 rmdir /home/thinclient/Pictures
 rmdir /home/thinclient/Public
 rmdir /home/thinclient/Templates
+rmdir /home/thinclient/Videos
 
 sed '/\/ /s/defaults/ro,defaults/g' -i /etc/fstab
 sed '/\/boot/s/defaults/ro,defaults/g' -i /etc/fstab
