@@ -19,5 +19,7 @@ xtc/sudoers.txt /opt/thinclient/install
 xtc/bashrc.txt /opt/thinclient/install		
 xtc/fstab_ro /opt/thinclient/install
 xtc/usbmount_0.0.24_all.deb /opt/thinclient/install
-xtc/firstboot /etc/init.d
-xtc/firstboot.sh /opt/thinclient/install
+xtc/firstboot-early.service /lib/systemd/system
+xtc/firstboot-early.sh /opt/thinclient/install
+xtc/firstboot-late.service /lib/systemd/system
+xtc/firstboot-late.sh /opt/thinclient/install
