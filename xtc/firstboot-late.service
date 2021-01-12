@@ -1,6 +1,6 @@
 [Unit]
 Description=FirstBoot-late
-After=first-boot-complete.target
+After=graphical.target
 ConditionFileNotEmpty=/opt/thinclient/install/firstboot-late.sh
 
 [Service]
