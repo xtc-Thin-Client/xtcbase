@@ -25,11 +25,6 @@ OS="U"
 #echo "System:" $OS
 #echo "Model:" $MODEL
 
-
-#echo "1. install packages"
-# delete pulseaudio while problems with also sound
-#apt-get -y remove pulseaudio
-
 #echo "16. create data directory"
 #mkdir $DATA 2>> /dev/null
 
