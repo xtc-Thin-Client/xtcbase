@@ -1,6 +1,9 @@
 xsetroot -solid "#90EE90"
 tint2 &
-wmctrl -s 0 | thinclient &
-sleep 3
-wmctrl -r Thinclient -t 0 & 
+/opt/thinclient/script/configuration.sh &
+thinclient &
 /opt/thinclient/script/remote.sh &
+/opt/thinclient/script/startidesk.sh &
+/opt/thinclient/script/setmonitor1.sh &
+sudo /opt/thinclient/script/settime.sh &
+/opt/thinclient/script/timeaction.sh &
