@@ -28,9 +28,26 @@ echo "Model:" $MODEL
 
 
 echo "2. start ssh"
+# only user thinclientssh and system is allowed
+if (grep "^AllowUsers" /etc/ssh/sshd_config)
+then
+  sed -e 's/^AllowUsers.*$/AllowUsers thinclientssh system/g' -i /etc/ssh/sshd_config
+else
+  echo "AllowUsers thinclientssh system" >> /etc/ssh/sshd_config
+fi
+# disable ssh
 systemctl disable ssh > /dev/null 2>&1
 
 echo "3. add user"
+# ssh user
+adduser --disabled-password --gecos "" thinclientssh 2>> $SOURCE/install.err
+echo thinclientssh:thinclient | chpasswd 2>> $SOURCE/install.err
+# give ssh user same uid/gid as thinclient user
+USERID=$(id -u thinclient)
+usermod -o -u $USERID thinclientssh
+GROUPID=$(id -g thinclient)
+groupmod -o -g $GROUPID thinclientssh
+
 adduser --disabled-password --gecos "" system 2>> $SOURCE/install.err
 echo system:system | chpasswd 2>> $SOURCE/install.err
 usermod -a -G users system 2>> $SOURCE/install.err
