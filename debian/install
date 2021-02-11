@@ -23,3 +23,4 @@ xtc/firstboot-early.service /lib/systemd/system
 xtc/firstboot-early.sh /opt/thinclient/install
 xtc/firstboot-late.service /lib/systemd/system
 xtc/firstboot-late.sh /opt/thinclient/install
+xtc/ideskrc /opt/thinclient/install
