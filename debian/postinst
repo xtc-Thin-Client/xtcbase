@@ -35,6 +35,10 @@ adduser --disabled-password --gecos "" system 2>> $SOURCE/install.err
 echo system:system | chpasswd 2>> $SOURCE/install.err
 usermod -a -G users system 2>> $SOURCE/install.err
 usermod -a -G video system 2>> $SOURCE/install.err
+mkdir $DIR/.idesktop
+chown thinclient:thinclient $DIR/.idesktop
+cp $SOURCE/ideskrc $DIR/.ideskrc
+chown thinclient:thinclient $DIR/.ideskrc
 
 echo "4. create restore files"
 mkdir /thinclient_restore 2>> $SOURCE/install.err
@@ -67,6 +71,10 @@ mkdir $DIR/.config 2>> $SOURCE/install.err
 mkdir $DIR/.config/openbox 2>> $SOURCE/install.err
 cp $SOURCE/autostart $DIR/.config/openbox 2>> $SOURCE/install.err
 cp $SOURCE/rc.xml /etc/xdg/openbox 2>> $SOURCE/install.err
+# delete idesk default file, because this file is copied to the desktop
+rm /usr/share/idesk/default.lnk
+# do not create home folders
+cp $SOURCE/user-dirs.defaults /etc/xdg
 
 echo "8. config tint2"
 mkdir $DIR/.config/tint2 2>> $SOURCE/install.err
