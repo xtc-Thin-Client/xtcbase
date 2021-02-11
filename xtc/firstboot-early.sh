@@ -41,6 +41,9 @@ chmod a=rwx $DATA 2>> /dev/null
 mkdir $DATA/thinclient 2>> $SOURCE/install.err
 chown thinclient $DATA/thinclient 2>> $SOURCE/install.err
 chgrp thinclient $DATA/thinclient 2>> $SOURCE/install.err
+mkdir $DATA/thinclient/config 2>> $SOURCE/install.err
+chown thinclient $DATA/thinclient/config 2>> $SOURCE/install.err
+chgrp thinclient $DATA/thinclient/config 2>> $SOURCE/install.err
 mkdir $DATA/vpn 2>> $SOURCE/install.err
 chown thinclient $DATA/vpn 2>> $SOURCE/install.err
 chgrp thinclient $DATA/vpn 2>> $SOURCE/install.err
