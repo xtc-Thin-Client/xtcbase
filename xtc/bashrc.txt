@@ -3,4 +3,5 @@
 if ! pidof openbox > /dev/null
 then
     startx    
+    /data/thinclient/dispsetup.sh
 fi
