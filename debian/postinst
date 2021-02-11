@@ -74,6 +74,7 @@ cp /etc/default/keyboard /thinclient_restore 2>> $SOURCE/install.err
 cp $DIR/.bashrc /thinclient_restore 2>> $SOURCE/install.err
 cp /etc/xdg/openbox/rc.xml /thinclient_restore 2>> $SOURCE/install.err
 cp /etc/usbmount/usbmount.conf /thinclient_restore 2>> $SOURCE/install.err
+cp /etc/xdg/user-dirs.defaults /thinclient_restore
 
 echo "5. config sudo"
 cat /etc/sudoers $SOURCE/sudoers.txt > /tmp/sudoers 2>> $SOURCE/install.err 
@@ -117,7 +118,12 @@ echo "10. install thinclient"
 #else
 #  cp -a $SOURCE/script/raspbian/tightvncpasswd $DESTINATION/script 2>> $SOURCE/install.err
 #fi
-ln -s $DESTINATION/script/thinclient.sh /usr/bin/thinclient 
+
+# set links for terminal commands
+ln -s $DESTINATION/script/thinclient.sh /usr/bin/thinclient
+ln -s $DESTINATION/script/system.sh /usr/bin/thinclient-config
+ln -s $DESTINATION/script/restartxtc.sh /usr/bin/restart
+ln -s $DESTINATION/script/timeaction.sh /usr/bin/timeaction
 
 echo "11. create var directory"
 mkdir $VAR 2>> $SOURCE/install.err
