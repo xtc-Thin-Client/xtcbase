@@ -18,72 +18,92 @@ case "$1" in
     mount -o remount,rw /
     mount -o remount,rw /boot
     
-    if (test -s /data/thinclient/interfaces)
+    if (test -s /data/thinclient/config/interfaces)
     then
-      cp /data/thinclient/interfaces /etc/network/interfaces
-      rm /data/thinclient/interfaces
+      cp /data/thinclient/config/interfaces /etc/network/interfaces
+      rm /data/thinclient/config/interfaces
     fi
         
-    if (test -s /data/thinclient/netplan)
+    if (test -s /data/thinclient/config/netplan)
     then
       NETPLANFILE=$(ls /etc/netplan)
-      cp /data/thinclient/netplan /etc/netplan/$NETPLANFILE
-      rm /data/thinclient/netplan
+      cp /data/thinclient/config/netplan /etc/netplan/$NETPLANFILE
+      rm /data/thinclient/config/netplan
     fi
     
-    if (test -s /data/thinclient/dhcpcd)
+    if (test -s /data/thinclient/config/dhcpcd)
     then
-      cp /data/thinclient/dhcpcd /etc/dhcpcd.conf
-      rm /data/thinclient/dhcpcd
+      cp /data/thinclient/config/dhcpcd /etc/dhcpcd.conf
+      rm /data/thinclient/config/dhcpcd
       # create /etc/resolv.conf
       /sbin/dhclient
     fi
     
-    if (test -s /data/thinclient/resolv.conf)
+    if (test -s /data/thinclient/config/resolv.conf)
     then
-      cp /data/thinclient/resolv.conf /etc
-      rm /data/thinclient/resolv.conf
+      cp /data/thinclient/config/resolv.conf /etc
+      rm /data/thinclient/config/resolv.conf
     fi
     
-    if (test -s /data/thinclient/wlan)
+    if (test -s /data/thinclient/config/wlan)
     then
-      cp /data/thinclient/wlan /etc/wpa_supplicant/wpa_supplicant.conf
+      cp /data/thinclient/config/wlan /etc/wpa_supplicant/wpa_supplicant.conf
       chown root:root /etc/wpa_supplicant/wpa_supplicant.conf
       chmod u=rw,g=r,o=r /etc/wpa_supplicant/wpa_supplicant.conf
-      rm /data/thinclient/wlan      
+      rm /data/thinclient/config/wlan      
     fi
     
-    cp /data/thinclient/keyboard /etc/default
+    cp /data/thinclient/config/keyboard /etc/default
 
-    if (test -s /data/thinclient/configuration)
+    if (test -s /data/thinclient/config/configuration)
     then
-      sh /data/thinclient/configuration
-      rm /data/thinclient/configuration
+      sh /data/thinclient/config/configuration
+      rm /data/thinclient/config/configuration
     fi
     
-    if (test -s /data/thinclient/argon1start)
+    if (test -s /data/thinclient/config/argon1start)
     then
       sh /opt/thinclient/script/argon1start.sh
-      rm /data/thinclient/argon1start
+      rm /data/thinclient/config/argon1start
     fi
     
-    if (test -s /data/thinclient/argon1stop)
+    if (test -s /data/thinclient/config/argon1stop)
     then
       sh /opt/thinclient/script/argon1stop.sh
-      rm /data/thinclient/argon1stop
+      rm /data/thinclient/config/argon1stop
     fi    
     
-    if (test -s /data/thinclient/usbautomounton)
+    if (test -s /data/thinclient/config/usbautomounton)
     then
       sh /opt/thinclient/script/setusb.sh on
-      rm /data/thinclient/usbautomounton
+      rm /data/thinclient/config/usbautomounton
     fi    
     
-    if (test -s /data/thinclient/usbautomountoff)
+    if (test -s /data/thinclient/config/usbautomountoff)
     then
       sh /opt/thinclient/script/setusb.sh off
-      rm /data/thinclient/usbautomountoff
+      rm /data/thinclient/config/usbautomountoff
+    fi
+    # set sound card
+    if (test -s /data/thinclient/config/soundcard)
+    then
+      sh /opt/thinclient/script/setsoundcard.sh
+      rm /data/thinclient/config/soundcard
     fi    
+    # set password for ssh user
+    if (test -s /data/thinclient/config/sshpass)
+    then
+      sh /opt/thinclient/script/setsshpassword.sh
+      rm /data/thinclient/config/sshpass
+    fi    
+    # set time
+    if (test -s /data/thinclient/config/time)
+    then
+      sh /opt/thinclient/script/configtime.sh
+      rm /data/thinclient/config/time
+    fi 
+    # save icons
+    cp -a /home/thinclient/.idesktop /var/thinclient/home/thinclient
     ;;
   force-reload|restart)
     $0 stop
