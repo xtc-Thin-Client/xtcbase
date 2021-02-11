@@ -191,6 +191,24 @@ sed 's/^FS_MOUNTOPTIONS=/FS_MOUNTOPTIONS="-fstype=vfat,user=000,dmask=0000,fmask
 # deactivate automount
 mv /etc/usbmount/usbmount.conf /etc/usbmount/usbmount.conf.off
 
+echo "27. configure dual monitors (Raspberry Pi 4 only)"
+if [ "$OS" = "R" ] && [ "$MODEL" = "PI4" ]
+then
+  echo "dtoverlay=vc4-fkms-v3d" >> /boot/config.txt
+  #mv /usr/share/dispsetup.sh /data/thinclient
+  #chown thinclient:thinclient /data/thinclient/dispsetup.sh
+  #ln -s /data/thinclient/dispsetup.sh /usr/share
+fi
+
+echo "28. configure system"
+# set /etc/resolv.conf
+sed -e 's/^namserver.*$/nameserver 1.1.1.1/' -i /etc/resolv.conf
+# Reduce waiting time to end process
+echo "DefaultTimeoutStopSec=6s" >> /etc/systemd/system.conf
+echo "DefaultTimeoutStopSec=6s" >> /etc/systemd/user.conf
+# disable ntp time
+timedatectl set-ntp false
+
 echo "* End installation"
 if [ -s $SOURCE/install.err ]
 then
