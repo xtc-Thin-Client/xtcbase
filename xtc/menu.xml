@@ -9,6 +9,9 @@
   <item label="Terminal emulator">
     <action name="Execute"><execute>x-terminal-emulator</execute></action>
   </item>
+  <item label="Restart xtc">
+    <action name="Execute"><execute>/opt/thinclient/script/thinclientrestart.sh</execute></action>
+  </item>  
   <item label="Exit">
     <action name="Exit" />
   </item>
